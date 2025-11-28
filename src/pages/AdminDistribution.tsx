@@ -59,12 +59,12 @@ export default function AdminDistribution() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-accent via-background to-secondary flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
-          <CardContent className="pt-6">
-            <div className="text-center space-y-4">
-              <div className="animate-spin text-6xl">⏳</div>
-              <p className="text-lg text-muted-foreground">
+      <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
+        <Card className="w-full max-w-md shadow-glow rounded-2xl border-2 border-primary/30">
+          <CardContent className="pt-8">
+            <div className="text-center space-y-6">
+              <div className="animate-spin text-7xl">⏳</div>
+              <p className="text-xl text-muted-foreground font-semibold">
                 Carregando participantes...
               </p>
             </div>
@@ -75,101 +75,107 @@ export default function AdminDistribution() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-accent via-background to-secondary p-4 xl:p-8">
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="min-h-screen gradient-bg p-4 xl:p-8">
+      <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex items-center gap-4">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => navigate('/')}
-            className="shrink-0"
+            className="shrink-0 rounded-xl hover:bg-accent transition-smooth h-12 w-12"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-6 h-6" />
           </Button>
           <div className="flex-1 text-center">
-            <div className="flex items-center justify-center gap-2">
-              <Sparkles className="w-8 h-8 xl:w-10 xl:h-10 text-primary" />
-              <h1 className="text-2xl xl:text-4xl font-bold text-foreground">
+            <div className="flex items-center justify-center gap-3">
+              <Sparkles className="w-10 h-10 xl:w-12 xl:h-12 text-primary animate-pulse" />
+              <h1 className="text-3xl xl:text-5xl font-bold gradient-text">
                 Distribuir Links Mágicos
               </h1>
             </div>
-            <p className="text-sm xl:text-base text-muted-foreground mt-2">
+            <p className="text-base xl:text-lg text-muted-foreground mt-3 font-medium">
               Envie os links para cada participante via WhatsApp
             </p>
           </div>
-          <div className="w-10 shrink-0" />
+          <div className="w-12 shrink-0" />
         </div>
 
         {/* Instruções */}
-        <Card className="shadow-lg border-primary/20">
+        <Card className="shadow-elegant card-hover rounded-2xl border-2 border-primary/20 backdrop-blur-sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <MessageCircle className="w-5 h-5 text-primary" />
+            <CardTitle className="flex items-center gap-2 text-2xl">
+              <MessageCircle className="w-6 h-6 text-primary" />
               Como Funciona
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-sm xl:text-base">
-            <p>
-              1️⃣ Clique no botão <strong className="text-primary">Enviar Link Mágico</strong> para abrir o WhatsApp
+          <CardContent className="space-y-3 text-base xl:text-lg">
+            <p className="flex items-start gap-2">
+              <span className="text-2xl">1️⃣</span>
+              <span>Clique no botão <strong className="gradient-text">Enviar Link Mágico</strong> para abrir o WhatsApp</span>
             </p>
-            <p>
-              2️⃣ A mensagem já estará pronta com o link personalizado
+            <p className="flex items-start gap-2">
+              <span className="text-2xl">2️⃣</span>
+              <span>A mensagem já estará pronta com o link personalizado</span>
             </p>
-            <p>
-              3️⃣ Ou use <strong>Copiar Link</strong> para enviar manualmente
+            <p className="flex items-start gap-2">
+              <span className="text-2xl">3️⃣</span>
+              <span>Ou use <strong>Copiar Link</strong> para enviar manualmente</span>
             </p>
-            <p className="text-destructive font-semibold">
-              ⚠️ Importante: Não revele o link de um participante para outro!
+            <p className="text-destructive font-bold flex items-start gap-2 mt-4 p-3 bg-destructive/10 rounded-xl">
+              <span className="text-2xl">⚠️</span>
+              <span>Importante: Não revele o link de um participante para outro!</span>
             </p>
           </CardContent>
         </Card>
 
         {/* Lista de Participantes */}
-        <Card className="shadow-lg">
+        <Card className="shadow-elegant card-hover rounded-2xl border-2 border-border/50 backdrop-blur-sm">
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="text-2xl">
               Participantes ({matches.length})
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-base">
               Envie o link mágico para cada participante
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {matches.map((match, index) => (
-                <Card key={index} className="border-border/50">
-                  <CardContent className="pt-6">
-                    <div className="space-y-4">
-                      <div>
-                        <p className="font-bold text-lg text-foreground">
-                          {match.participantName}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {match.participantPhone}
-                        </p>
+                <Card key={index} className="border-2 border-border/50 shadow-elegant card-hover rounded-2xl overflow-hidden">
+                  <div className="gradient-accent p-0.5">
+                    <CardContent className="pt-6 bg-card rounded-xl">
+                      <div className="space-y-4">
+                        <div>
+                          <p className="font-bold text-xl text-foreground">
+                            {match.participantName}
+                          </p>
+                          <p className="text-base text-muted-foreground font-medium">
+                            {match.participantPhone}
+                          </p>
+                        </div>
+                        <div className="flex flex-col xl:flex-row gap-3">
+                          <Button
+                            onClick={() => handleSendWhatsApp(match)}
+                            className="flex-1 h-14 rounded-xl text-base font-semibold gradient-primary hover:shadow-glow transition-smooth"
+                            size="lg"
+                          >
+                            <MessageCircle className="w-5 h-5 mr-2" />
+                            Enviar Link Mágico 🟢
+                          </Button>
+                          <Button
+                            onClick={() => handleCopyToken(match.token)}
+                            variant="outline"
+                            className="flex-1 xl:flex-none h-14 rounded-xl border-2 hover:border-primary transition-smooth"
+                            size="lg"
+                          >
+                            <Copy className="w-5 h-5 mr-2" />
+                            Copiar Link
+                          </Button>
+                        </div>
                       </div>
-                      <div className="flex flex-col xl:flex-row gap-2">
-                        <Button
-                          onClick={() => handleSendWhatsApp(match)}
-                          className="flex-1"
-                          size="lg"
-                        >
-                          <MessageCircle className="w-5 h-5 mr-2" />
-                          Enviar Link Mágico 🟢
-                        </Button>
-                        <Button
-                          onClick={() => handleCopyToken(match.token)}
-                          variant="outline"
-                          className="flex-1 xl:flex-none"
-                          size="lg"
-                        >
-                          <Copy className="w-5 h-5 mr-2" />
-                          Copiar Link
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
+                    </CardContent>
+                  </div>
                 </Card>
               ))}
             </div>
@@ -177,31 +183,34 @@ export default function AdminDistribution() {
         </Card>
 
         {/* Aviso Final */}
-        <Card className="shadow-lg bg-accent border-primary/20">
-          <CardContent className="pt-6">
-            <div className="text-center space-y-2">
-              <p className="text-lg font-semibold text-foreground">
-                ✨ Sorteio Concluído! ✨
-              </p>
-              <p className="text-sm xl:text-base text-muted-foreground">
-                Guarde este link para acessar novamente:
-              </p>
-              <div className="bg-background p-3 rounded-lg break-all text-xs xl:text-sm font-mono">
-                {window.location.href}
+        <Card className="shadow-glow rounded-2xl border-2 border-primary/30 backdrop-blur-sm overflow-hidden">
+          <div className="gradient-secondary p-1">
+            <CardContent className="pt-6 bg-card rounded-xl">
+              <div className="text-center space-y-4">
+                <p className="text-2xl font-bold gradient-text">
+                  ✨ Sorteio Concluído! ✨
+                </p>
+                <p className="text-base xl:text-lg text-muted-foreground font-medium">
+                  Guarde este link para acessar novamente:
+                </p>
+                <div className="bg-muted p-4 rounded-xl break-all text-sm xl:text-base font-mono border-2 border-border">
+                  {window.location.href}
+                </div>
+                <Button
+                  onClick={() => {
+                    navigator.clipboard.writeText(window.location.href);
+                    toast.success('Link de administração copiado! 📋');
+                  }}
+                  variant="outline"
+                  size="lg"
+                  className="rounded-xl border-2 hover:border-primary transition-smooth h-12"
+                >
+                  <Copy className="w-5 h-5 mr-2" />
+                  Copiar Link de Administração
+                </Button>
               </div>
-              <Button
-                onClick={() => {
-                  navigator.clipboard.writeText(window.location.href);
-                  toast.success('Link de administração copiado! 📋');
-                }}
-                variant="outline"
-                size="sm"
-              >
-                <Copy className="w-4 h-4 mr-2" />
-                Copiar Link de Administração
-              </Button>
-            </div>
-          </CardContent>
+            </CardContent>
+          </div>
         </Card>
       </div>
     </div>
