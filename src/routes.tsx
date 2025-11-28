@@ -1,4 +1,6 @@
-import SamplePage from './pages/SamplePage';
+import AdminSetup from './pages/AdminSetup';
+import AdminDistribution from './pages/AdminDistribution';
+import ParticipantReveal from './pages/ParticipantReveal';
 import type { ReactNode } from 'react';
 
 interface RouteConfig {
@@ -10,9 +12,28 @@ interface RouteConfig {
 
 const routes: RouteConfig[] = [
   {
-    name: 'Sample Page',
+    name: 'Admin Setup',
     path: '/',
-    element: <SamplePage />
+    element: <AdminSetup />,
+    visible: false
+  },
+  {
+    name: 'Admin Distribution',
+    path: '/distribuir/:adminToken',
+    element: <AdminDistribution />,
+    visible: false
+  },
+  {
+    name: 'Participant Reveal',
+    path: '/revelar/:token',
+    element: <ParticipantReveal />,
+    visible: false
+  },
+  {
+    name: 'Participant Reveal Manual',
+    path: '/revelar',
+    element: <ParticipantReveal />,
+    visible: false
   }
 ];
 
