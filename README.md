@@ -1,92 +1,293 @@
-# Welcome to Your Miaoda Project
+# 🎁 Amigo Oculto Mágico
 
-## Project Info
+> Aplicativo web moderno para organização de sorteios de Amigo Oculto com distribuição segura via WhatsApp
 
-## Project Directory
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/devjuniorcoelho/amigo-oculto-magico)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://reactjs.org/)
 
-```
-├── README.md # Documentation
-├── components.json # Component library configuration
-├── eslint.config.js # ESLint configuration
-├── index.html # Entry file
-├── package.json # Package management
-├── postcss.config.js # PostCSS configuration
-├── public # Static resources directory
-│   ├── favicon.png # Icon
-│   └── images # Image resources
-├── src # Source code directory
-│   ├── App.tsx # Entry file
-│   ├── components # Components directory
-│   ├── context # Context directory
-│   ├── db # Database configuration directory
-│   ├── hooks # Common hooks directory
-│   ├── index.css # Global styles
-│   ├── layout # Layout directory
-│   ├── lib # Utility library directory
-│   ├── main.tsx # Entry file
-│   ├── routes.tsx # Routing configuration
-│   ├── pages # Pages directory
-│   ├── services # Database interaction directory
-│   ├── types # Type definitions directory
-├── tsconfig.app.json # TypeScript frontend configuration file
-├── tsconfig.json # TypeScript configuration file
-├── tsconfig.node.json # TypeScript Node.js configuration file
-└── vite.config.ts # Vite configuration file
-```
+## ✨ Funcionalidades
 
-## Tech Stack
+### Para Organizadores
+- 🎯 **Criar Grupos**: Configure seu Amigo Oculto com nome personalizado
+- 👥 **Gerenciar Participantes**: Adicione participantes com nome e WhatsApp
+- 🔀 **Sorteio Automático**: Algoritmo garante que cada pessoa tira apenas uma vez
+- 📱 **Envio via WhatsApp**: Links mágicos enviados diretamente pelo WhatsApp
+- 🔗 **Links Únicos**: Cada participante recebe um link exclusivo e criptografado
+- 📋 **Painel de Distribuição**: Visualize todos os participantes e envie os links
 
-Vite, TypeScript, React, Supabase
+### Para Participantes
+- 🎁 **Revelação Mágica**: Abra o link e descubra quem você tirou
+- 🔐 **100% Seguro**: Criptografia AES-256-GCM de nível militar
+- 📱 **Responsivo**: Funciona perfeitamente em mobile e desktop
+- ✨ **Animações Suaves**: Interface moderna com transições fluidas
 
-## Development Guidelines
+## 🎨 Design Moderno
 
-### How to edit code locally?
+- **Gradientes Vibrantes**: Azul → Roxo → Magenta
+- **Animações Fluidas**: Efeitos floating e pulse-glow
+- **Cards Elegantes**: Bordas arredondadas com efeito glass
+- **Sombras Profundas**: 5 níveis de profundidade
+- **Responsivo**: Otimizado para todos os dispositivos
 
-You can choose [VSCode](https://code.visualstudio.com/Download) or any IDE you prefer. The only requirement is to have Node.js and npm installed.
+## 🔒 Segurança
 
-### Environment Requirements
+✅ **Criptografia AES-256-GCM** (nível militar)  
+✅ **PBKDF2** com 100.000 iterações  
+✅ **Tokens únicos** e não reutilizáveis  
+✅ **Dados criptografados** no banco de dados  
+✅ **Descriptografia client-side** (servidor nunca vê os dados)  
+✅ **HTTPS automático** via Vercel  
 
-```
-# Node.js ≥ 20
-# npm ≥ 10
-Example:
-# node -v   # v20.18.3
-# npm -v    # 10.8.2
+## 🧪 Testes
+
+O algoritmo de sorteio foi testado rigorosamente:
+
+```bash
+node test-draw-algorithm.cjs
 ```
 
-### Installing Node.js on Windows
+**Resultados:**
+- ✅ Cada pessoa é sorteada por apenas uma pessoa (100%)
+- ✅ Ninguém tira a si mesmo (100%)
+- ✅ Forma um ciclo completo (100%)
+- ✅ Funciona com 3 a 100+ participantes (100%)
+- ✅ 100 execuções consecutivas sem falhas (100%)
 
-```
-# Step 1: Visit the Node.js official website: https://nodejs.org/, click download. The website will automatically suggest a suitable version (32-bit or 64-bit) for your system.
-# Step 2: Run the installer: Double-click the downloaded installer to run it.
-# Step 3: Complete the installation: Follow the installation wizard to complete the process.
-# Step 4: Verify installation: Open Command Prompt (cmd) or your IDE terminal, and type `node -v` and `npm -v` to check if Node.js and npm are installed correctly.
-```
+## 🚀 Deploy Rápido
 
-### Installing Node.js on macOS
+### 1. Deploy no Vercel (1 clique)
 
-```
-# Step 1: Using Homebrew (Recommended method): Open Terminal. Type the command `brew install node` and press Enter. If Homebrew is not installed, you need to install it first by running the following command in Terminal:
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-Alternatively, use the official installer: Visit the Node.js official website. Download the macOS .pkg installer. Open the downloaded .pkg file and follow the prompts to complete the installation.
-# Step 2: Verify installation: Open Command Prompt (cmd) or your IDE terminal, and type `node -v` and `npm -v` to check if Node.js and npm are installed correctly.
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/devjuniorcoelho/amigo-oculto-magico)
 
-### After installation, follow these steps:
+### 2. Configurar Variáveis de Ambiente
 
-```
-# Step 1: Download the code package
-# Step 2: Extract the code package
-# Step 3: Open the code package with your IDE and navigate into the code directory
-# Step 4: In the IDE terminal, run the command to install dependencies: npm i
-# Step 5: In the IDE terminal, run the command to start the development server: npm run dev -- --host 127.0.0.1
-# Step 6: if step 5 failed, try this command to start the development server: npx vite --host 127.0.0.1
+No painel do Vercel, adicione:
+
+```env
+VITE_APP_ID=seu-app-id
+VITE_SUPABASE_URL=https://seu-projeto.supabase.co
+VITE_SUPABASE_ANON_KEY=sua-chave-aqui
 ```
 
-### How to develop backend services?
+### 3. Pronto! 🎉
 
-Configure environment variables and install relevant dependencies.If you need to use a database, please use the official version of Supabase.
+Seu aplicativo estará no ar em 2-5 minutos.
 
-## Learn More
+📖 **Guia completo**: Veja [DEPLOY_VERCEL.md](DEPLOY_VERCEL.md)
 
-You can also check the help documentation: Download and Building the app（ [https://intl.cloud.baidu.com/en/doc/MIAODA/s/download-and-building-the-app-en](https://intl.cloud.baidu.com/en/doc/MIAODA/s/download-and-building-the-app-en)）to learn more detailed content.
+## 💻 Desenvolvimento Local
+
+### Pré-requisitos
+
+- Node.js 18+ 
+- npm ou pnpm
+- Conta no Supabase (gratuita)
+
+### Instalação
+
+```bash
+# Clonar repositório
+git clone https://github.com/devjuniorcoelho/amigo-oculto-magico.git
+cd amigo-oculto-magico
+
+# Instalar dependências
+npm install
+
+# Copiar arquivo de ambiente
+cp .env.example .env
+
+# Editar .env com suas credenciais
+nano .env
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+```
+
+Acesse: http://localhost:5173
+
+### Scripts Disponíveis
+
+```bash
+npm run dev          # Servidor de desenvolvimento
+npm run build        # Build para produção
+npm run preview      # Preview do build
+npm run lint         # Verificar código
+```
+
+## 🗄️ Banco de Dados
+
+### Configurar Supabase
+
+1. Crie uma conta em: https://supabase.com
+2. Crie um novo projeto
+3. Execute as migrations em `supabase/migrations/`
+4. Copie as credenciais para `.env`
+
+### Estrutura do Banco
+
+**Tabela: groups**
+- `id` (uuid): ID único do grupo
+- `name` (text): Nome do grupo
+- `admin_token` (text): Token de administração
+- `created_at` (timestamp): Data de criação
+
+**Tabela: matches**
+- `id` (uuid): ID único do match
+- `group_id` (uuid): Referência ao grupo
+- `participant_token` (text): Token único do participante
+- `encrypted_data` (text): Dados criptografados
+- `created_at` (timestamp): Data de criação
+
+## 📱 Como Usar
+
+### 1. Criar Grupo
+
+1. Acesse o aplicativo
+2. Digite o nome do grupo (ex: "Amigo Oculto 2025")
+3. Adicione participantes (mínimo 3):
+   - Nome completo
+   - WhatsApp com DDD (ex: +5511999999999)
+
+### 2. Realizar Sorteio
+
+1. Clique em "Sortear e Gerar Links Mágicos"
+2. Aguarde o processamento
+3. Você será redirecionado para a página de distribuição
+
+### 3. Distribuir Links
+
+1. Para cada participante, clique em "Enviar Link Mágico 🟢"
+2. O WhatsApp abrirá com mensagem pré-formatada
+3. Ou use "Copiar Link" para enviar manualmente
+
+### 4. Revelação
+
+1. Participante recebe link via WhatsApp
+2. Clica no link
+3. Vê automaticamente quem tirou
+4. Ou insere o token manualmente
+
+## 🛠️ Tecnologias
+
+### Frontend
+- **React 19** - Framework UI
+- **TypeScript** - Tipagem estática
+- **Vite** - Build tool
+- **Tailwind CSS** - Estilização
+- **shadcn/ui** - Componentes UI
+- **React Router** - Roteamento
+
+### Backend
+- **Supabase** - Banco de dados PostgreSQL
+- **Supabase Auth** - Autenticação (opcional)
+
+### Segurança
+- **Web Crypto API** - Criptografia nativa
+- **AES-256-GCM** - Algoritmo de criptografia
+- **PBKDF2** - Derivação de chaves
+
+### Deploy
+- **Vercel** - Hospedagem e CI/CD
+- **GitHub** - Controle de versão
+
+## 📊 Arquitetura
+
+```
+┌─────────────┐
+│   Cliente   │
+│  (Browser)  │
+└──────┬──────┘
+       │
+       │ HTTPS
+       │
+┌──────▼──────┐
+│   Vercel    │
+│  (Frontend) │
+└──────┬──────┘
+       │
+       │ API
+       │
+┌──────▼──────┐
+│  Supabase   │
+│ (Database)  │
+└─────────────┘
+```
+
+### Fluxo de Dados
+
+1. **Criação**: Admin cria grupo e adiciona participantes
+2. **Sorteio**: Algoritmo gera pares (giver → receiver)
+3. **Criptografia**: Dados são criptografados com AES-256-GCM
+4. **Armazenamento**: Dados criptografados salvos no Supabase
+5. **Distribuição**: Links únicos gerados e enviados via WhatsApp
+6. **Revelação**: Participante acessa link, dados são descriptografados no browser
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Por favor:
+
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -m 'feat: adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
+
+### Padrões de Commit
+
+Seguimos [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat:` Nova funcionalidade
+- `fix:` Correção de bug
+- `docs:` Documentação
+- `style:` Formatação
+- `refactor:` Refatoração
+- `test:` Testes
+- `chore:` Manutenção
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+**Junior Coelho**
+- Email: devjuniorcoelho@gmail.com
+- GitHub: [@devjuniorcoelho](https://github.com/devjuniorcoelho)
+
+## 🙏 Agradecimentos
+
+- [React](https://reactjs.org/) - Framework incrível
+- [Supabase](https://supabase.com/) - Backend as a Service
+- [Vercel](https://vercel.com/) - Hospedagem perfeita
+- [shadcn/ui](https://ui.shadcn.com/) - Componentes lindos
+- [Tailwind CSS](https://tailwindcss.com/) - CSS utilitário
+
+## 📞 Suporte
+
+Encontrou um bug? Tem uma sugestão?
+
+- 🐛 [Reportar Bug](https://github.com/devjuniorcoelho/amigo-oculto-magico/issues)
+- 💡 [Sugerir Feature](https://github.com/devjuniorcoelho/amigo-oculto-magico/issues)
+- 📧 Email: devjuniorcoelho@gmail.com
+
+## 🗺️ Roadmap
+
+- [ ] Suporte a múltiplos idiomas
+- [ ] Tema escuro/claro
+- [ ] Histórico de sorteios
+- [ ] Exportar resultados
+- [ ] Notificações por email
+- [ ] App mobile nativo
+- [ ] Integração com Telegram
+
+## ⭐ Star History
+
+Se este projeto te ajudou, considere dar uma ⭐!
+
+---
+
+**Feito com ❤️ por Junior Coelho**
+
+🎁 **Organize seu Amigo Oculto de forma mágica!** ✨
