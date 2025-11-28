@@ -82,11 +82,12 @@ All colors MUST be HSL.
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -94,78 +95,78 @@ All colors MUST be HSL.
   .gradient-hero {
     background: var(--gradient-hero);
   }
-  
+
   .gradient-card {
     background: var(--gradient-card);
   }
-  
+
   .gradient-button {
     background: var(--gradient-button);
   }
-  
+
   .gradient-accent {
     background: var(--gradient-accent);
   }
-  
+
   .gradient-bg {
     background: var(--gradient-bg);
   }
-  
+
   .shadow-sm {
     box-shadow: var(--shadow-sm);
   }
-  
+
   .shadow-md {
     box-shadow: var(--shadow-md);
   }
-  
+
   .shadow-lg {
     box-shadow: var(--shadow-lg);
   }
-  
+
   .shadow-xl {
     box-shadow: var(--shadow-xl);
   }
-  
+
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
-  
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }
-  
+
   .transition-fast {
     transition: var(--transition-fast);
   }
-  
+
   .card-modern {
     @apply rounded-3xl border-2 backdrop-blur-sm transition-smooth;
   }
-  
+
   .card-hover {
     @apply card-modern;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  
+
   .card-hover:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-xl);
   }
-  
+
   .btn-modern {
     @apply rounded-2xl font-bold transition-smooth;
   }
-  
+
   .btn-modern:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
   }
-  
+
   .btn-modern:active {
     transform: translateY(0);
   }
-  
+
   .gradient-text {
     background: var(--gradient-hero);
     -webkit-background-clip: text;
@@ -173,32 +174,38 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
-  
+
   .glass-effect {
     @apply backdrop-blur-xl bg-card/80 border border-border/50;
   }
-  
+
   .floating {
     animation: floating 3s ease-in-out infinite;
   }
-  
+
   @keyframes floating {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-10px);
     }
   }
-  
+
   .pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
-  
+
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 20px hsl(262 83% 58% / 0.3);
     }
+
     50% {
       box-shadow: 0 0 40px hsl(262 83% 58% / 0.6), 0 0 80px hsl(217 91% 60% / 0.4);
     }
