@@ -15,7 +15,31 @@ export default function AdminSetup() {
   const [groupName, setGroupName] = useState('Amigo Oculto 2025');
   const [participantName, setParticipantName] = useState('');
   const [participantPhone, setParticipantPhone] = useState('');
-  const [participants, setParticipants] = useState<Participant[]>([]);
+  const [participants, setParticipants] = useState<Participant[]>([
+    { name: 'Sara', phone: '+5575991035926' },
+    { name: 'Franciele', phone: '+5575981441823' },
+    { name: 'Bianca Souza', phone: '+5575982303876' },
+    { name: 'Bianca Nascimento', phone: '+5575981810701' },
+    { name: 'Kátia', phone: '+5575991457472' },
+    { name: 'Gabriel', phone: '+5575983041879' },
+    { name: 'J. Gabriel', phone: '+5575992188551' },
+    { name: 'Gilvan', phone: '+5575991073242' },
+    { name: 'Jaqueline', phone: '+5575981873271' },
+    { name: 'Gisela', phone: '+5575992444659' },
+    { name: 'Raíssa', phone: '+5575983294918' },
+    { name: 'Carol', phone: '+5575983129012' },
+    { name: 'Larissa', phone: '+5575998378265' },
+    { name: 'Morgana', phone: '+5574999176194' },
+    { name: 'Poliana', phone: '+5575988476442' },
+    { name: 'Ravena', phone: '+5575974005329' },
+    { name: 'Laís', phone: '+5575992772436' },
+    { name: 'Julia', phone: '+5575982689723' },
+    { name: 'Mariana', phone: '+5575992035127' },
+    { name: 'Sofia', phone: '+5575988814757' },
+    { name: 'Manu', phone: '+5575988335221' },
+    { name: 'Matheus', phone: '+5575991338080' },
+    { name: 'Diva', phone: '+5575992886621' }
+  ]);
   const [isDrawing, setIsDrawing] = useState(false);
 
   const handleAddParticipant = () => {
