@@ -224,17 +224,18 @@ export default function AdminSetup() {
               <Button
                 onClick={handleDraw}
                 disabled={!canDraw || isDrawing}
-                className="w-full h-16 rounded-xl text-xl font-bold gradient-secondary hover:shadow-glow transition-smooth disabled:opacity-50"
+                className="w-full h-16 rounded-xl text-base xl:text-xl font-bold gradient-secondary hover:shadow-glow transition-smooth disabled:opacity-50 px-4"
                 size="lg"
               >
                 {isDrawing ? (
                   <>
                     <span className="animate-spin mr-2">⏳</span>
-                    Realizando Sorteio...
+                    <span className="max-sm:text-sm">Realizando Sorteio...</span>
                   </>
                 ) : (
                   <>
-                    Sortear e Gerar Links Mágicos ✨
+                    <span className="max-sm:text-sm">Sortear e Gerar Links ✨</span>
+                    <span className="hidden xl:inline"> Mágicos</span>
                   </>
                 )}
               </Button>
