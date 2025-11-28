@@ -7,6 +7,8 @@ import { Copy, MessageCircle, ArrowLeft, Sparkles } from 'lucide-react';
 import { getGroupMatches } from '@/db/api';
 import type { MatchWithToken } from '@/types/types';
 
+import SEO from '@/components/common/SEO';
+
 export default function AdminDistribution() {
   const { adminToken } = useParams<{ adminToken: string }>();
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ export default function AdminDistribution() {
   const handleSendWhatsApp = (participant: MatchWithToken) => {
     const url = getRevealUrl(participant.token);
     const message = `🎁 *Amigo Oculto Mágico* 🎁\n\nOlá ${participant.participantName}!\n\nVocê foi sorteado(a) no Amigo Oculto! 🎉\n\nClique no link abaixo para descobrir quem você tirou:\n${url}\n\n✨ Mantenha segredo! ✨`;
-    
+
     const whatsappUrl = `https://wa.me/${participant.participantPhone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -60,6 +62,7 @@ export default function AdminDistribution() {
   if (isLoading) {
     return (
       <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
+        <SEO title="Distribuir Links" />
         <Card className="w-full max-w-md shadow-glow rounded-2xl border-2 border-primary/30">
           <CardContent className="pt-8">
             <div className="text-center space-y-6">
@@ -76,6 +79,7 @@ export default function AdminDistribution() {
 
   return (
     <div className="min-h-screen gradient-bg p-4 xl:p-8">
+      <SEO title="Distribuir Links" description="Distribua os links mágicos para os participantes do Amigo Oculto!" />
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex items-center gap-4">

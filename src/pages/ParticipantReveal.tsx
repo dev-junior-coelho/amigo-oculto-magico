@@ -8,6 +8,8 @@ import { toast } from 'sonner';
 import { Gift, Sparkles, Eye, Home } from 'lucide-react';
 import { revealMatch } from '@/db/api';
 
+import SEO from '@/components/common/SEO';
+
 export default function ParticipantReveal() {
   const { token: urlToken } = useParams<{ token: string }>();
   const navigate = useNavigate();
@@ -34,11 +36,11 @@ export default function ParticipantReveal() {
 
     try {
       const result = await revealMatch(token.trim());
-      
+
       setParticipantName(result.participantName);
       setAssignedTo(result.assignedTo);
       setRevealed(true);
-      
+
       // Efeito sonoro de sucesso (opcional)
       toast.success('Revelado! 🎊');
     } catch (error) {
@@ -56,6 +58,7 @@ export default function ParticipantReveal() {
   if (revealed) {
     return (
       <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
+        <SEO title="Seu Amigo Oculto" description="Descubra quem você tirou no Amigo Oculto!" />
         <Card className="w-full max-w-2xl shadow-glow rounded-3xl border-2 border-primary/30 overflow-hidden">
           <div className="gradient-primary p-1">
             <CardContent className="pt-12 xl:pt-16 bg-card rounded-2xl">
@@ -67,7 +70,7 @@ export default function ParticipantReveal() {
                     <Gift className="w-20 h-20 xl:w-24 xl:h-24 text-secondary" />
                     <Sparkles className="w-16 h-16 xl:w-20 xl:h-20 text-primary animate-pulse" />
                   </div>
-                  
+
                   <div className="space-y-3">
                     <p className="text-2xl xl:text-3xl text-muted-foreground font-medium">
                       Olá, <strong className="gradient-text">{participantName}</strong>! 👋

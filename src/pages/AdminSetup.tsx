@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { Trash2, Gift, Sparkles } from 'lucide-react';
 import { createGroupAndDraw } from '@/db/api';
 import type { Participant } from '@/types/types';
+import SEO from '@/components/common/SEO';
 
 export default function AdminSetup() {
   const navigate = useNavigate();
@@ -71,9 +72,9 @@ export default function AdminSetup() {
 
     try {
       const result = await createGroupAndDraw(groupName.trim(), participants);
-      
+
       toast.success('Sorteio realizado com sucesso! 🎊');
-      
+
       // Navega para a página de distribuição com o admin token
       navigate(`/distribuir/${result.adminToken}`);
     } catch (error) {
@@ -88,6 +89,10 @@ export default function AdminSetup() {
 
   return (
     <div className="min-h-screen gradient-bg p-4 xl:p-8">
+      <SEO
+        title="Criar Sorteio"
+        description="Crie seu grupo de Amigo Oculto e sorteie de forma segura e divertida!"
+      />
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4 animate-in fade-in duration-700">
