@@ -13,6 +13,9 @@
     "lint": "tsgo -p tsconfig.check.json; npx biome lint; .rules/check.sh;npx tailwindcss -i ./src/index.css -o /dev/null 2>&1 | grep -E '^(CssSyntaxError|Error):.*' || true;.rules/testBuild.sh"
   },
   "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/cli": "^7.4.4",
+    "@capacitor/core": "^7.4.4",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
@@ -75,6 +78,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.4",
+    "@capacitor/assets": "^3.0.5",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/lodash": "^4.17.20",
     "@types/react": "^19.2.2",
